@@ -1,0 +1,71 @@
+<div class="container">
+
+<div class="row">
+        
+<div class="col-md-3">
+            
+<form action="#" >
+   <br><br>               
+<div class="input-group">
+                                      
+<input class="form-control" placeholder="Search for"  ng-model="searchText" required>
+                    
+<span class="input-group-btn">
+                        
+<button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+                    
+</span>
+               
+ </div>
+            
+</form>
+        
+</div>
+
+<div class="col-md-6">
+    	 
+<table class="table table-striped">
+                    
+<thead>
+                        
+<tr>
+                            
+<th>Title</th>
+                            
+<th>Posted On</th>
+                            
+<th>Skills Required</th>
+                            
+                        
+</tr>
+                    
+</thead>
+                    
+<tbody>
+<tr ng-repeat="job in jobs | filter : searchText ">                     
+                           
+<td><a href="" ng-click="getJobDetails(job.id)">{{job.jobtitle}}</a></td>
+                            
+<td>{{job.postedOn | date : 'medium'}}</td>
+                            
+<td>{{job.skillsrequired}}</td>                                                    
+</tr>                                           
+</tbody>              
+</table>   		
+</div>	
+</div>
+</div>
+
+<div ng-show="showJobDetails">
+<div class="w3-animate-opacity">
+<b><u>Job Details:</u></b><br>
+<b>Job title: </b>{{job.jobtitle}}<br><br>
+<b>Job Description: </b>{{job.jobDescription}}<br><br>
+<b>Skills Required: </b>{{job.skillsrequired}}<br><br>
+<b>Experience:</b> {{job.yrsOfExp}}<br><br>
+<b>Salary: </b>{{job.salary}}<br><br>
+<b>Posted On:</b> {{job.postedOn | date : 'medium'}}<br><br>
+<b>Company: </b>{{job.companyname}}<br><br>
+<b>Location:</b> {{job.location}}<br><br>
+</div>
+</div>

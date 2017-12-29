@@ -1,0 +1,76 @@
+<style>
+.red{
+color:red;   
+}
+.form-area
+{
+background-color: #FAFAFA;
+padding: 10px 40px 60px;
+margin: 10px 0px 60px;
+border: 1px solid GREY;	
+}
+</style>
+
+<div class="container">
+
+<div class="col-md-5">
+   
+ <div class="form-area">  
+<span style="color:red" ng-if="error.code==1">{{error.message}}</span>      
+ <form role="form">
+        
+<br style="clear:both">
+                 
+<h3 style="margin-bottom: 25px; text-align: center;">Register Form</h3>
+    	
+<div class="form-group">
+Enter Username : 					
+<input type="text" class="form-control" ng-model="user.username" placeholder="User Name" required>
+<span style="color:red" ng-if="error.code==2">{{error.message}}</span>			
+</div>
+				
+<div class="form-group">
+Enter Password:					
+<input type="password" ng-model="user.password" class="form-control" placeholder="Password" required>
+					
+</div>
+					
+<div class="form-group">
+Enter Firstname :				
+<input type="text" ng-model="user.firstname" class="form-control" placeholder="First Name" required>
+					
+</div>
+					
+<div class="form-group">
+Enter Lastname :					
+<input type="text" ng-model="user.lastname" class="form-control" placeholder="Last Name" required>
+			
+</div>
+                    
+<div class="form-group">
+Enter Email :                    
+<input input type="email" ng-model="user.email" class="form-control" placeholder="Email" required>
+<span style="color:red" ng-if="error.code==3">{{error.message}}</span>
+</div>
+
+<div class="form-group">
+Enter Phonenumber:                    
+<input input type="text" ng-model="user.phonenumber" class="form-control" placeholder="Mobile Number" required>
+
+</div>
+
+Select Role:
+<input type="radio" value="STUDENT" ng-model="user.role">Student  
+<input type="radio" value="EMPLOYEE" ng-model="user.role"> Employee
+<input type="radio" value="ALUMNI" ng-model="user.role"> Alumni
+       
+<button type="submit" value="Register" ng-click="registerUser()" class="btn btn-primary pull-right">Submit Form</button>
+
+      <!-- 1 -->   
+</form>
+    
+</div>
+
+</div>
+
+</div>
