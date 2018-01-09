@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<h3>Approved Blogpost</h3>
+<div class="container">
+	<div>
+		<div class="panel panel-default">
+			<div class="panel-heading"><h1>Blog Title :
+				{{blog.blogtitle}}</h1><br> <b>Created By: &nbsp;</b>{{blog.postedBy.firstname}}<br>
+				<b>Created On:</b>{{blog.postedOn | date :'yyyy:MM:dd'}}s
+			</div>
+			<div class="panel-body"><label>Blog Content:</label> {{blog.blogcontent}}</div> 
+				<div ><a> <span class="glyphicon glyphicon-hand-right fa-3x"></span> </a>
+				</div>
+			
+			<a></a> <br>
+		</div>
+	</div>
+</div>
+</body>
+</html>

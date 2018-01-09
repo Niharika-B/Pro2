@@ -30,7 +30,24 @@ app.config(function($routeProvider){
 		templateUrl:'views/blogform.html',
 		controller:'BlogController'
 	})
+.when('/bloglist', {
+		templateUrl : 'views/bloglist.html',
+		controller : 'BlogController'
+	})
+.when('/admin/getblog/:id', {
+		templateUrl : 'views/approval.html',
+		controller : 'BlogDetails'
+	})
 	
+	
+	.when('/getblog/:id',{
+		templateUrl : 'views/blogdetails.html',
+		controller : 'BlogDetails'
+	}) 
+	.when('/profilepic',{
+		templateUrl: 'views/profilepic.html'
+	})
+
 	.otherwise({templateUrl:'views/home.html'})
 })
 app.run(function($rootScope,$cookieStore,UserService,$location){

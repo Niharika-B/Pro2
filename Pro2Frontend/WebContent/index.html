@@ -40,6 +40,12 @@
 <li><a href="#/jobtitle" ng-show="currentUser.username">All Jobs</a></li>
 <li><a href="#/editprofile" ng-show="currentUser.username">Edit UserProfile</a></li>
 <li><a href="#/blog" ng-show="currentUser.username">Add Blog</a></li>	
+<li><a href="#/bloglist" ng-show="currentUser.username">Blogs</a></li>
+<li><a href="#/profilepic" ng-show="currentUser.username">Profile
+						Picture <img
+						src="http://localhost:8080/Pro2Middleware/getimage/{{currentUser.username}}"
+						width=20px; height=20px; alt="Error on loading">
+				</a></li>
 </ul>
 </div>
 </div></nav>
@@ -62,5 +68,5 @@
 	<script type="text/javascript" src="services/jobservice.js"></script>
 <script type="text/javascript" src="controllers/blogcontroller.js"></script>
 <script type="text/javascript" src="services/blogservice.js"></script>
-
+<script type="text/javascript" src="controllers/blogdetails.js"></script>
 </html>

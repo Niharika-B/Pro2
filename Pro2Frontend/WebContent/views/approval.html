@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style type="text/css">
+.container{
+    max-width: 750px;
+
+    background: #FAFAFA;
+    padding: 30px;
+    margin: 100px auto;
+    box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
+    border-radius: 20px;
+    border: 6px solid #305A72;
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+	<h2>BlogPost Approval Form</h2>
+<div class="row">
+<div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<b>Blog Title : {{blog.blogtitle}}</b><br>
+<b>Created By:</b>{{blog.postedBy.firstname}}<br>
+<b>Created On:</b>{{blog.postedOn | date :'yyyy:MM:dd'}}
+</div>
+<div class="panel-body">
+{{blog.blogcontent}}
+</div>
+</div>
+</div>
+</div>
+<form>
+<input type="radio" ng-model="blog.approved" value="true" ng-click="showRejectionTxt(false)">Approve
+<input type="radio" ng-model="blog.approved" value="false" ng-click="showRejectionTxt(true)">Reject
+<br>
+<div ng-show="isRejected">
+Enter Rejection Reason
+<input type="text" ng-model="rejectionReason" ><br>
+</div>
+<input type="submit" ng-click="updateBlogPost()"><!-- update query / delete query -->
+</form>
+{{error.message}}
+	
+	</div>
+</body>
+</html>
